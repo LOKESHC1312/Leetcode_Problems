@@ -1,0 +1,16 @@
+// Last updated: 6/4/2026, 10:28:27 PM
+class Solution {
+    public int countTriplets(int[] arr) {
+        int ans=0;
+        int n=arr.length;
+        for(int i=0;i<n;++i){
+            int val=arr[i];
+            for(int k=i+1;k<n;++k){
+                if((val ^=arr[k])==0){
+                    ans+=k-i;
+                }
+            }
+        }
+        return ans;
+    }
+}
